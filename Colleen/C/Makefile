@@ -1,6 +1,6 @@
 SRC_NAME = Colleen.c
-SRC_PATH = ./C/
-OBJ_PATH = ./objs/
+SRC_PATH = ./
+OBJ_PATH = ./
 INC_PATH = ./
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
@@ -37,14 +37,11 @@ asm:
 clean:
 	@printf "%-50s" "deleting objects..."
 	@$(RM) $(OBJ)
-	@$(RM) $(ASM_EXE)
-	@$(RM) -r $(OBJ_PATH)
 	@printf "\e[1;32m[OK]\e[0m\n"
 
 fclean: clean
 	@printf "%-50s" "deleting executable..."
 	@$(RM) $(NAME)
-	@$(RM) $(ASM_EXE)
 	@printf "\e[1;32m[OK]\e[0m\n"
 
 re: fclean all
