@@ -8,4 +8,3 @@
 #define VIDDI(fd) fprintf(fd, VICCI, 10, 10, 10, 9, 10, 10, 10, 34, VICCI, 34, 10, 10, 34, 34, 34, 34, 10);fclose(fd);
 #define VENI int main(){FILE * fd = fopen("Grace_kid.c", "w"); VIDDI(fd);return 0;}
 VENI;
-
