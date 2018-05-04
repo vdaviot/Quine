@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 int main(){
-	int nb = 5;
+	int nb = 4;
 	if (strcmp(__FILE__, "Sully.c") == 0)
 		nb = nb + 1;
 	if (nb <= 0)
