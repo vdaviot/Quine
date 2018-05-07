@@ -16,7 +16,7 @@ mov rcx, 10
 call _fprintf
 %endmacro
 
-%macro SPRINTF 2
+%macro SPRINTF 0
 lea rdi, [File] ; buffer
 lea rsi, [Filename] ; format
 mov rdx, r12 ; int
