@@ -12,15 +12,18 @@ SECTION .text
 lea rdi, [%1]
 mov rsi, r12
 mov rdx, 10
+mov rcx, 34
+lea r8, [%1]
 call _printf
 %endmacro
 
 %macro FPRINTF 0
-; mov rdi, Fd ; fd
-mov rdi, rax
-lea rsi, [Quine] ; quine
+mov rdi, [Fd] ; fd
+lea rsi, [Quine] ; Quine
 mov rdx, r12 ; va_args
 mov rcx, 10 ; \n
+mov r8, 34
+lea r9, [Quine]
 call _fprintf
 %endmacro
 
@@ -35,11 +38,11 @@ call _sprintf
 lea rdi, [File]
 lea rsi, [Mode]
 call _fopen
-;mov [Fd], rax
+mov qword [Fd], rax
 %endmacro
 
 %macro FCLOSE 0
-mov rdi, rax
+mov rdi, Fd
 call _fclose
 %endmacro
 
@@ -78,14 +81,12 @@ lea rdi, [Command]
 call _system
 %endmacro
 
-
 _main:
 	mov r12, 5
 	push r12
 	SPRINTF ; ecriture nom fichier
 	FOPEN ; ouverture fichier
-	; FPRINTF ; ecriture Quine ; pb avec fd -> fprintf
-	; PRINTF Quine; DEBUG
+	FPRINTF ; ecriture Quine ; pb avec fd -> fprintf
 	FCLOSE ; fermeture fichier
 	OBJ ; link obj
 	FORM ; formatting .o
@@ -96,7 +97,8 @@ _main:
 
 SECTION .data
 
-Quine: db ">Sully_%1$d.asm%2$c", 0
+Fdp: db "DEBUG", 10, 0
+Quine: db "SECTION .text%2$cglobal _main%2$c_main:%2$cpush rbp%2$cret%2$c", 0
 Mode: db "w", 0
 Nasm: db "/Users/vdaviot/homebrew/bin/nasm -f macho64 %s", 0
 Compil: db "clang -Wall -Wextra -Werror %s.o -o %s", 0
