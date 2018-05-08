@@ -28,10 +28,6 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.asm
 	@$(CCA) $(CAFLAGS) $(SRC_NAME)
 	@printf "\e[1;32m[OK]\e[0m\n"
 
-asm:
-	@nasm -Wall -Werror -Wextra ASM/Sully.s
-	@printf "\e[1;32m[OK]\e[0m\n"
-
 clean:
 	@printf "%-50s" "deleting objects..."
 	@$(RM) $(OBJ_NAME)
@@ -40,7 +36,7 @@ clean:
 fclean: clean
 	@printf "%-50s" "deleting executable..."
 	@$(RM) $(ASM_EXE)
-	@$(RM) $(OBJ_NAME)
+	@$(RM) $(OBJ_NAME)  Sully_5 Sully_4 Sully_3 Sully_2 Sully_1 Sully_0Sully_5.asm Sully_4.asm Sully_3.asm Sully_2.asm Sully_1.asm Sully_0.asm Sully5
 	@printf "\e[1;32m[OK]\e[0m\n"
 
 re: fclean all
