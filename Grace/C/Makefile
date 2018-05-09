@@ -36,7 +36,7 @@ asm:
 
 clean:
 	@printf "%-50s" "deleting objects..."
-	@$(RM) $(OBJ)
+	@$(RM) $(OBJ) Grace_kid.c
 	@printf "\e[1;32m[OK]\e[0m\n"
 
 fclean: clean
