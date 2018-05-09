@@ -36,7 +36,7 @@ clean:
 fclean: clean
 	@printf "%-50s" "deleting executable..."
 	@$(RM) $(ASM_EXE)
-	@$(RM) $(OBJ_NAME)  Sully_5 Sully_4 Sully_3 Sully_2 Sully_1 Sully_0Sully_5.asm Sully_4.asm Sully_3.asm Sully_2.asm Sully_1.asm Sully_0.asm Sully5
+	@$(RM) $(OBJ_NAME)  Sully_5 Sully_4 Sully_3 Sully_2 Sully_1 Sully_0 Sully_5.asm Sully_4.asm Sully_3.asm Sully_2.asm Sully_1.asm Sully_0.asm Sully5 Sully_5.o Sully_4.o Sully_3.o Sully_2.o Sully_1.o Sully_0.o
 	@printf "\e[1;32m[OK]\e[0m\n"
 
 re: fclean all
