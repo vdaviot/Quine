@@ -77,7 +77,7 @@ lea rdi, [Command]
 call _system
 %endmacro
 _main:
-mov r12, 5
+mov r12, 0
 cmp r12, 0
 jl end
 push r12
