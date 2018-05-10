@@ -1,4 +1,4 @@
-SRC_NAME = Sully.c
+SRC_NAME = sully.c
 SRC_PATH = ./
 OBJ_PATH = ./
 INC_PATH = ./
